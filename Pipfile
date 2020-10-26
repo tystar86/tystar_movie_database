@@ -10,11 +10,13 @@ django = "*"
 pre-commit = "*"
 django-extensions = "*"
 psycopg2 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
 
 [scripts]
 runserver = "python manage.py runserver"
+runscript = "python manage.py runscript"
 makemigrations = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
