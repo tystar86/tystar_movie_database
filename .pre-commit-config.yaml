@@ -28,3 +28,8 @@ repos:
     rev: v0.0.1-beta.0 # Possible releases: https://github.com/hadialqattan/pycln/tags
     hooks:
       - id: pycln
+  - repo: https://github.com/PyCQA/isort
+    rev: '5.6.4'
+    hooks:
+      - id: isort
+        args: ['--profile', 'black']
