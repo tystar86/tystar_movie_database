@@ -1,29 +1,21 @@
 version: 2.1
 
 jobs:
-  python_test:
-    working_directory: ~/app
+  build:
+    executor: python/default
     steps:
       - checkout
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.8/site-packages
-      - restore_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Pipfile.lock" }}-v2020
+      - python/install-packages:
+          args: pytest
+          pkg-manager: pipenv
       - run:
           command: |
-            sudo pip install pipenv
-            pipenv install --dev
-      - save_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Pipfile.lock" }}-v2020
-          paths:
-            - '.venv'
-            - '/usr/local/bin'
-            - '/usr/local/lib/python3.8/site-packages'
-      - run:
-          command: ./manage.py test
-          name: Test
+            pipenv run pytest --version
+          name: Test it
+orbs:
+  python: circleci/python@1.0.0
 
 workflows:
   main:
     jobs:
-      - python_test
+      - build
