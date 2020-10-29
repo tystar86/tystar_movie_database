@@ -6,7 +6,7 @@
 - √ codecov: https://coverage.readthedocs.io/ , https://docs.codecov.io/
 - pytest: https://docs.pytest.org/
 - Heroku: https://www.heroku.com/
-- GraphQL
+- GraphQL: https://docs.graphene-python.org/
 - React
 
 - tried Poetry: does not support scripts as pipenv (you have to create specific file with functions to execute)
