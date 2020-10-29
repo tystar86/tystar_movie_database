@@ -14,7 +14,6 @@ jobs:
       #     name: Test it
       - run:
           command: |
-            sudo pip install pipenv
             pipenv install --dev
       - run:
           command: |
