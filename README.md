@@ -1,11 +1,11 @@
 # tystar_movie_database
 
-- Django
-- pre-commit √
-- Circle CI
-- codecov
-- pytest
-- Heroku
+- √ Django
+- √ pre-commit: https://pre-commit.com/
+- √ Circle CI
+- √ codecov: https://coverage.readthedocs.io/ , https://docs.codecov.io/
+- pytest: https://docs.pytest.org/
+- Heroku: https://www.heroku.com/
 - GraphQL
 - React
 

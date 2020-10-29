@@ -14,7 +14,7 @@ jobs:
           name: Test it
       - run:
           command: |
-            pipenv run coverage run --omit=.venv* manage.py test --keepdb
+            pipenv run coverage run -m pytest
             pipenv run coverage xml
             bash <(curl -s https://codecov.io/bash)
       - run: pipenv run pre-commit run --all-files
