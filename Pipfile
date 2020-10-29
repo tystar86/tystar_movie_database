@@ -8,6 +8,7 @@ django = "*"
 django-extensions = "*"
 psycopg2 = "*"
 requests = "*"
+graphene-django = "*"
 
 [dev-packages]
 coverage = "*"
