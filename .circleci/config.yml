@@ -8,10 +8,14 @@ jobs:
       - python/install-packages:
           args: pytest
           pkg-manager: pipenv
+      # - run:
+      #     command: |
+      #       pipenv run pytest --version
+      #     name: Test it
       - run:
           command: |
-            pipenv run pytest --version
-          name: Test it
+            sudo pip install pipenv
+            pipenv install --dev
       - run:
           command: |
             pipenv run coverage run -m pytest

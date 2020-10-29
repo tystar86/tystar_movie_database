@@ -3,16 +3,16 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[dev-packages]
-coverage = "*"
-
 [packages]
 django = "*"
-pre-commit = "*"
 django-extensions = "*"
 psycopg2 = "*"
 requests = "*"
+
+[dev-packages]
+coverage = "*"
 pytest = "*"
+pre-commit = "*"
 
 [requires]
 python_version = "3.8"
