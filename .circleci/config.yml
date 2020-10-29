@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build:
+  python_test:
     executor: python/default
     steps:
       - checkout
@@ -12,10 +12,20 @@ jobs:
           command: |
             pipenv run pytest --version
           name: Test it
+      - run:
+          command: |
+            pipenv run coverage run --omit=.venv* manage.py test --keepdb
+            pipenv run coverage xml
+            bash <(curl -s https://codecov.io/bash)
+      - run: pipenv run pre-commit run --all-files
+      - run:
+          command: git diff
+          name: git diff
+          when: on_fail
 orbs:
   python: circleci/python@1.0.0
 
 workflows:
   main:
     jobs:
-      - build
+      - python_test
